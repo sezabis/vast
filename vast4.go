@@ -109,7 +109,7 @@ type InteractiveCreativeFile struct {
 	// Identifies the API needed to execute the resource file if applicable.
 	ApiFramework string `xml:"apiFramework,attr,omitempty"`
 	// Identifies the MIME type of the file provided.
-	Type bool `xml:"type,attr,omitempty"`
+	Type string `xml:"type,attr,omitempty"`
 	// Useful for interactive use cases.
 	// Identifies whether the ad always drops when the duration is reached,
 	// or if it can potentially extend the duration by pausing the underlying video or delaying the adStopped call after adVideoComplete.
