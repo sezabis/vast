@@ -1,4 +1,4 @@
-module github.com/haxqer/vast
+module github.com/sezabis/vast
 
 go 1.13
 
