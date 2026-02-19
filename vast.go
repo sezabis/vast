@@ -72,18 +72,13 @@ type InLine struct {
 	AdSystem *AdSystem
 	// A URI representing an error-tracking pixel; this element can occur multiple
 	// times.
-	Errors []CDATAString `xml:"Error,omitempty" json:"Error,omitempty"`
-	// XML node for custom extensions, as defined by the ad server. When used, a
-	// custom element should be nested under <Extensions> to help separate custom
-	// XML elements from VAST elements. The following example includes a custom
-	// xml element within the Extensions element.
-	Extensions *[]Extension `xml:"Extensions>Extension,omitempty" json:",omitempty"`
-	// One or more URIs that directs the video player to a tracking resource file that the
-	// video player should request when the first frame of the ad is displayed
 	Impressions []Impression `xml:"Impression"`
 	// Provides a value that represents a price that can be used by real-time bidding
 	// (RTB) systems. VAST is not designed to handle RTB since other methods exist,
 	// but this element is offered for custom solutions if needed.
+	Errors []CDATAString `xml:"Error,omitempty" json:"Error,omitempty"`
+	// One or more URIs that directs the video player to a tracking resource file that the
+	// video player should request when the first frame of the ad is displayed
 	Pricing *Pricing `xml:",omitempty" json:",omitempty"`
 	// Any ad server that returns a VAST containing an <InLine> ad must generate a pseudo- unique identifier
 	// that is appropriate for all involved parties to track the lifecycle of that ad.
@@ -101,6 +96,11 @@ type InLine struct {
 	Category *[]Category `xml:",omitempty" json:",omitempty"`
 	// The container for one or more <Creative> elements
 	Creatives []Creative `xml:"Creatives>Creative"`
+	// XML node for custom extensions, as defined by the ad server. When used, a
+	// custom element should be nested under <Extensions> to help separate custom
+	// XML elements from VAST elements. The following example includes a custom
+	// xml element within the Extensions element.
+	Extensions *[]Extension `xml:"Extensions>Extension,omitempty" json:",omitempty"`
 	// A string value that provides a longer description of the ad.
 	Description *CDATAString `xml:",omitempty" json:",omitempty"`
 	// A URI to a survey vendor that could be the survey, a tracking pixel,
